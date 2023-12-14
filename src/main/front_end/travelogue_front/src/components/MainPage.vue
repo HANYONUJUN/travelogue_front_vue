@@ -5,7 +5,9 @@
         <a href="#about">about</a>
         <a href="#contact">contact</a>
       </div>
-      <div class="user_meun"></div>
+      <div class="user_meun">
+        <button @click="goToLogin">login/join</button>
+      </div>
     </div>
   
     <div class="intro" id="intro">
@@ -62,10 +64,22 @@
   </template>
   
   <script lang="ts">
-  export default {
-    name: "App"
-  } 
+  import { defineComponent } from 'vue';
+  import { useRouter } from 'vue-router';
+  
+  export default defineComponent({
+    setup() {
+      const router = useRouter();
+  
+      const goToLogin = () => {
+        router.push({ name: 'Login' });
+      };
+  
+      return { goToLogin };
+    }
+  });
   </script>
+  
   
   
   <style>
