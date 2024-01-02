@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Main from './components/MainPage.vue'
-import Login from './components/LoginPage.vue'
+import Main from '../src/assets/components/MainPage.vue'
+import Login from '../src/assets/components/LoginPage.vue'
 
 const routes = [
   
@@ -20,6 +20,9 @@ const routes = [
 ]
 
 const router = createRouter({
+  scrollBehavior(){
+    return {top: 0};
+  },
     history: createWebHistory(process.env.BASE_URL),
     routes,
 });

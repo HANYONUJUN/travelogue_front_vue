@@ -1,9 +1,9 @@
 <template>
     <div class="meun">
       <div class="meun_list">
-        <a href="#intro">intro</a>
-        <a href="#about">about</a>
-        <a href="#contact">contact</a>
+        <a href="#" v-scroll-to="'#intro'">intro</a>
+        <a href="#" v-scroll-to="'#about'">about</a>
+        <a href="#" v-scroll-to="'#contact'">contact</a>
       </div>
       <div class="user_meun">
         <button @click="goToLogin">login/join</button>
@@ -35,16 +35,13 @@
   
     <div class="about" id="about">
       <div class="main_title">about</div>
-  
       <div class="main_section">
         <h2>
-          원하시는 여행 장소를 찾고<br />
+          원하시는 여행 장소를 찾고<br/>
           멋진 일정을 계획해보세요!
         </h2>
       </div>
-  
-
-  </div>
+    </div>
 
     <div class="contact" id="contact">
       <div class="contact_title">contact</div>
@@ -66,8 +63,14 @@
   <script lang="ts">
   import { defineComponent } from 'vue';
   import { useRouter } from 'vue-router';
+  import VueScrollTo from 'vue-scrollto';
+  import '../scss/main.scss';
+  
   
   export default defineComponent({
+    directives: {
+      'scroll-to': VueScrollTo // directives에 vue-scrollto 등록
+    },
     setup() {
       const router = useRouter();
   
@@ -80,12 +83,3 @@
   });
   </script>
   
-  
-  
-  <style>
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
-  @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-  @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
-  @import '../assets//scss/main.scss';
-
-  </style>
