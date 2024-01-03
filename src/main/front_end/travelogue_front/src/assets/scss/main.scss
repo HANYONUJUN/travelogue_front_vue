@@ -31,11 +31,10 @@
  .meun_list{
     text-align: left;
     margin-left: 60px;
-    word-spacing: 45px;
+    word-spacing: 15px;
     margin-top: 3%;
  }
 
- 
  
  @media(max-width:700px){
     .meun_list{
@@ -46,7 +45,6 @@
     }
  }
 
- 
  
  .meun_list a {
     font-family: "Montserrat", sans-serif;
