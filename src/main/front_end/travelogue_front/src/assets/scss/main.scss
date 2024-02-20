@@ -30,19 +30,38 @@
  
  .meun_list{
     text-align: left;
-    margin-left: 60px;
-    word-spacing: 15px;
+    margin-left: 8.5%;
     margin-top: 3%;
+
+    a{
+      display: inline-block;
+      margin-right: 15px;
+    }
  }
 
- 
  @media(max-width:700px){
     .meun_list{
        text-align: left;
        margin-left: 20px;
-       word-spacing: 10px;
        margin-top: 3%;
+
+       a{
+         display: inline-block;
+         margin-right: 15px;
+       }
     }
+ }
+
+ .user_meun{
+   text-align: right;
+   margin-right: 10%;
+   margin-top: -1.32%;
+
+   a{
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+   }
  }
 
  
@@ -67,9 +86,9 @@
  .image{
     display: flex;
     width: 100%;
-    padding: 4% 3%;
+    padding: 6% 7%;
     box-sizing: border-box;
-    height: 70vh;
+    height: 80vh;
  }
  
  @media(max-width:700px){
@@ -113,8 +132,8 @@
  
  .box:hover {flex: 1 1 50%;}
  .box:hover > img {
-    width: 100%;
-    height: 100%;
+    width: 140%;
+    height: 140%;
  }
  
  .main_title{
@@ -141,7 +160,7 @@
  
  .main_section{
     text-align: left;
-    margin-top: 8%;
+    margin-top: -25.9%;
     margin-left: 50px;
  }
  
@@ -155,11 +174,11 @@
  
  .main_section h2{
     font-family: "Montserrat", sans-serif;
-    font-size: 55px;
+    font-size: 65px;
     font-weight: 700;
     animation: slideRight 1s ease-in-out forwards;
     transform: translateX(-50%);
-    opacity: 0;
+    opacity: 1;
     transition: .8s;
  }
  
@@ -179,89 +198,10 @@
     transform: translateX(0);
     opacity: 1
  }
- 
- .main_planner{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
- }
- 
- .planner_box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #008aff;
-    border-radius: 10px;
-    width: 550px;
-    height: 520px;
-    float: right;
-    margin-top: -25%;
-    margin-right: 60px;
- }
- 
- @media(max-width:700px){
-    .planner_box{
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       background: #008aff;
-       border-radius: 10px;
-       width: 350px;
-       height: 370px;
-       float: right;
-       margin-top: -3%;
-       margin-right: 4px;
-    }
- }
- 
- .wrapper{
-    width: 450px;
-    background: #fff;
-    border-radius: 10px;
-    padding: 25px;
- 
- }
- 
- @media(max-width:700px){
-    .wrapper{
-       width: 280px;
-       height: 300px;
-       background: #fff;
-       border-radius: 10px;
-       padding: 25px;
-    
-    }
- }
- 
- .wrapper .nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
- }
- 
- @media(max-width:700px){
-    .wrapper .nav{
-       display: flex;
-       align-items: center;
-       justify-content: space-between;
-       margin-top: -25px;
-    }
- }
- 
- .wrapper .nav .current-date {
-    font-size: 24px;
-    font-weight: 600;
- }
- 
- @media(max-width:700px){
-    .wrapper .nav .current-date {
-       font-size: 18px;
-       font-weight: 600;
-       margin-top:15px;
-    }
-    
+
+ .plan_map_img{
+   margin-left: 54%;
+   margin-top: 1%;
  }
  
  button {
@@ -272,96 +212,6 @@
     padding: 0;
     cursor: pointer;
   }
- 
- .header .nav .button{
-    width: 38px;
-    height: 38px;
-    font-size: 30px;
-    color: #878787;
- }
- 
- .header .nav button:hover{
-    background: #f2f2f2;
- }
- 
- .calendar ul{
-    display: flex;
-    list-style: none;
-    flex-wrap: wrap;
-    text-align: center;
-    margin-right: 40px;
- }
- 
- 
- .calendar .weeks li{
-    font-weight:  500;
- }
- 
- 
- .calendar .days{
-    margin-bottom: 20px;
- }
- 
- .calendar ul li {
-    width: calc(100% / 7);
-    position: relative;
- }
- 
- @media(max-width:700px){
-    .calendar ul li {
-       width: calc(100% / 7);
-       position: relative;
-       word-spacing: 30px;
-    }
- }
- 
- @media(max-width:700px){
-    .calendar .weeks {
-       font-size: 13px;
-    }
- }
- 
- .calendar .days li{
-    z-index: 1;
-    margin-top:  30px;
-    cursor: pointer;
- }
- 
- @media(max-width:700px){
-    .calendar .days li{
-       z-index: 1;
-       margin-top: 15px;
-       cursor: pointer;
-    }
- }
- 
- 
- .days li.inactive {
-    color: #aaa;
- }
- 
- .days li.active{
-    color: #fff;
- }
- 
- .calendar .days li::before {
-    position: absolute;
-    content: '';
-    height: 40px;
-    width: 40px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: -1;
- }
- 
- .days li:hover::before {
-    background: #f2f2f2;
- }
- .days li:active::before{
-    background: #008aff;
- }
  
  
  .contact_title{

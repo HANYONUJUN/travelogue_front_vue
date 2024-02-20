@@ -5,8 +5,9 @@
         <a href="#" v-scroll-to="'#about'">about</a>
         <a href="#" v-scroll-to="'#contact'">contact</a>
       </div>
+      
       <div class="user_meun">
-        <button @click="goToLogin">login/join</button>
+        <button @click="goToLogin"><a>login/join</a></button>
       </div>
     </div>
   
@@ -32,9 +33,16 @@
         </div>
       </div>
     </div>
+
+   
   
     <div class="about" id="about">
       <div class="main_title">about</div>
+
+      <div class="plan_map_img">
+        <img src="../img/locationmap.png">
+      </div>
+
       <div class="main_section">
         <h2>
           원하시는 여행 장소를 찾고<br/>
@@ -61,11 +69,11 @@
   </template>
   
   <script lang="ts">
-  import { defineComponent } from 'vue';
+  import { defineComponent, onMounted} from 'vue';
   import { useRouter } from 'vue-router';
   import VueScrollTo from 'vue-scrollto';
   import '../scss/main.scss';
-  
+  import { observer } from '../data/mainAction';
   
   export default defineComponent({
     directives: {
@@ -73,12 +81,19 @@
     },
     setup() {
       const router = useRouter();
-  
+
+      onMounted(() => {
+        const titleList: HTMLElement[] = Array.from(document.querySelectorAll('h2'));
+        // 반복문을 돌려 모든 DOM에 적용
+        titleList.forEach((el: HTMLElement) => observer.observe(el));
+      });
+
       const goToLogin = () => {
         router.push({ name: 'Login' });
       };
   
       return { goToLogin };
+
     }
   });
   </script>
